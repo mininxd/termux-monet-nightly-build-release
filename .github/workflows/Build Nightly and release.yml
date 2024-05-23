@@ -21,7 +21,12 @@ jobs:
     steps:
       - name: Clone repository
         uses: actions/checkout@v4
-
+        
+      - name: Setup NodeJs
+        uses: actions/setup-node@v4
+        with:
+         node-version: 18
+         
       - name: Build APKs
         shell: bash {0}
         env:
