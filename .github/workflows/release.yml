@@ -1,14 +1,10 @@
-name: Release Latest Successful Build
+name: Release Latest Artifact
 
 on:
-  workflow_run:
-    workflows: ["Build and Test"]
-    types:
-      - completed
+  workflow_dispatch:
 
 jobs:
   release:
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
 
     steps:
